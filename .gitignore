@@ -1,3 +1,4 @@
 #ide settings folders
-.idea/*
+.idea
 .cache
+.pytest_cache
