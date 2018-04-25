@@ -56,7 +56,7 @@ class EndToEndTests(unittest.TestCase):
 
             def crossover(self, pairing):
                 new_params = {'height': np.mean([self.height, pairing.height]),
-                              'width':  np.mean([self.width, pairing.width])}
+                              'width': np.mean([self.width, pairing.width])}
                 return MyMember(construction_parameters=new_params)
 
         def fit_through_door(member: MyMember):
@@ -65,7 +65,7 @@ class EndToEndTests(unittest.TestCase):
             height_diff = abs(door_height - member.height)
             width_diff = abs(door_width - member.width)
             if height_diff > 0 or width_diff > 0:
-                return 1/(height_diff + width_diff)
+                return 1 / (height_diff + width_diff)
             else:
                 return np.inf
 
@@ -77,7 +77,6 @@ class EndToEndTests(unittest.TestCase):
 
         random.seed(1)
         pop = ga.Population(10, MyMember, fit_through_door, member_parameters_generator=param_generator)
-        start_pop = pop.population
         self.assertEqual(len(pop.population), 10)
         self.assertEqual(pop.member_type, MyMember)
         self.assertEqual(pop.fitness_function, fit_through_door)

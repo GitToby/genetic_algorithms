@@ -1,6 +1,5 @@
 import random
 import unittest
-import numpy as np
 import src as ga
 
 
