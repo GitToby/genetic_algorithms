@@ -1,3 +1,7 @@
 #ide settings folders
-.idea/*
+.idea
 .cache
+.pytest_cache
+src/__pycache__/
+tests/__pycache__/
+

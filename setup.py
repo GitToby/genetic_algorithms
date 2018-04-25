@@ -20,5 +20,5 @@ setup(
     author_email='',
     url='',
     license=license,
-    packages=find_packages(exclude=('test', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs'))
 )
