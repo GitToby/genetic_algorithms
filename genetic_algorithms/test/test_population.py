@@ -1,6 +1,6 @@
 import random
 import unittest
-import src as ga
+import genetic_algorithms as ga
 
 
 class PopulationTests(unittest.TestCase):
@@ -43,7 +43,6 @@ class PopulationTests(unittest.TestCase):
         self.assertEqual(len(pop.population), 10)
         self.assertEqual(pop.member_type, MyMember)
         self.assertEqual(pop.fitness_function, custom_fit_func)
-
 
 
 if __name__ == '__main__':

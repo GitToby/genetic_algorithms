@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 from itertools import starmap
 
-import src as ga
+import genetic_algorithms as ga
 
 
 class EndToEndTests(unittest.TestCase):
