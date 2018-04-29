@@ -1,4 +1,4 @@
-Genetic Algorithms for python
+Genetic Algorithms for Python
 ==============
 [![Build Status](https://travis-ci.org/GitToby/genetic_algorithms.svg?branch=master)](https://travis-ci.org/GitToby/genetic_algorithms)
 
@@ -10,6 +10,10 @@ Roadmap
 * add mutation potency & frequency, extract population flow to user defined sequence.
 * add multi population models
 * add common crossover and mutation generic methods
+
+Install
+-------
+Currently genetic-algorithms is not on pip, so while in the root directory run `pip install .` to install the package or `pip install -e .` for a dev install.
 
 Examples
 --------
