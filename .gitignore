@@ -2,6 +2,6 @@
 .idea
 .cache
 .pytest_cache
-genetic_algorithms/__pycache__/
-tests/__pycache__/
-/genetic_algorithms/genetic_algorithms.egg-info/
+genetic_algorithms\.egg-info/
+*.pyc
+

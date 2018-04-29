@@ -36,7 +36,7 @@ class EndToEndTests(unittest.TestCase):
         self.assertEqual(pop.member_type, MyMember)
         self.assertEqual(pop.fitness_function, m_fit_func)
 
-        pop.run(10, print_logging=False)
+        pop.run(10, print_logging=False, maximise_fitness_func=True)
         end_scores = list(starmap(m_fit_func, [[m] for m in pop.population]))
         # Ensure changes have been made
         self.assertNotEqual(pop.population, start_pop)
@@ -64,10 +64,7 @@ class EndToEndTests(unittest.TestCase):
             door_width = 3
             height_diff = abs(door_height - member.height)
             width_diff = abs(door_width - member.width)
-            if height_diff > 0 or width_diff > 0:
-                return 1 / (height_diff + width_diff)
-            else:
-                return np.inf
+            return height_diff + width_diff
 
         def param_generator():
             max_h = 10
@@ -83,8 +80,8 @@ class EndToEndTests(unittest.TestCase):
         self.assertDictEqual(pop.population[0].construction_parameters, {'height': 2, 'width': 18})
 
         # run 5 generations before checking we have some parameters changed
-        pop.run(generations=50)
-        self.assertEqual(pop.population[0].construction_parameters, {'height': 9.6953125, 'width': 4.1953125})
+        pop.run(generations=500, maximise_fitness_func=False)
+        self.assertEqual({'height': 9.6953125, 'width': 4.1953125}, pop.population[0].construction_parameters)
 
 
 if __name__ == '__main__':

@@ -58,7 +58,8 @@ class Population(object):
             self.population.append(new_member)
 
     def run(self, generations, successful_cutoff: float = 0.4,
-            print_logging: bool = False, csv_path: str = None) -> None:
+            print_logging: bool = False, csv_path: str = None,
+            maximise_fitness_func: bool = False) -> None:
         # Indexing from 1
         for gen in range(generations):
             if print_logging:
@@ -68,7 +69,7 @@ class Population(object):
             score_list = list(self._get_score_all_zip())
 
             # sort them in reverse, highest -> smallest score
-            score_list = sorted(score_list, key=lambda x: x[0], reverse=True)
+            score_list = sorted(score_list, key=lambda x: x[0], reverse=maximise_fitness_func)
             (scores, members) = zip(*score_list)
 
             # remove members below the successful cutoff
@@ -79,7 +80,8 @@ class Population(object):
             if print_logging:
                 print("Scored members.")
                 print("Population score stats:")
-                print("| Best Score:", max(scores), "| Worst Score:", min(scores), "| Mean Score:", np.mean(scores), "|")
+                print("| Best Score:", max(scores), "| Worst Score:", min(scores), "| Mean Score:", np.mean(scores),
+                      "|")
                 print()
 
             self.log_df = self.log_df.append({"generation": gen + 1, "population": members, "scores": scores},
