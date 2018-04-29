@@ -1,4 +1,4 @@
-Genetic Algorithms for python
+Genetic Algorithms for Python
 ==============
 [![Build Status](https://travis-ci.org/GitToby/genetic-algorithms.svg?branch=master)](https://travis-ci.org/GitToby/genetic-algorithms)
 
@@ -11,13 +11,17 @@ Roadmap
 * add multi population models
 * add common crossover and mutation generic methods
 
+Install
+-------
+Currently genetic-algorithms is not on pip, so while in the root directory run `pip install .` to install the package or `pip install -e .` for a dev install.
+
 Examples
 --------
 This is a basic example for maximising values in a list, starring with 10 members running 100 generation.
 Then it will log to the screen and create a csv file with each generations information in short format.
 
 ```python
-import src as ga
+import genetic_algorithms as ga
 import random
 
 class MyMember(ga.MemberBase):
