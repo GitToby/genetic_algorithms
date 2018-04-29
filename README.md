@@ -96,7 +96,7 @@ def param_generator():
 random.seed(1)
 pop = ga.Population(100, Door, fit_through_door, member_parameters_generator=param_generator)
 # run 500 generations before checking we have some parameters changed
-pop.run(generations=500, print_logging=True)
+pop.run(generations=500, print_logging=True, maximise_fitness_func=False)
 print("Best door:", pop.get_top())
 # returns what almost exactly what we want:
 # Best door: (height: 9.999995902180672 | width: 3.999865485355258, 244033.23286180547)
