@@ -1,5 +1,6 @@
 Genetic Algorithms for python
 ==============
+[![Build Status](https://travis-ci.org/GitToby/genetic-algorithms.svg?branch=master)](https://travis-ci.org/GitToby/genetic-algorithms)
 
 This library hopes to build a wrapper for genetic algorithms to leverage in optimisation situations.
 It hopes to make writing infinitely customizable genetic algorithms easy and quick while having all the standard features expected.
