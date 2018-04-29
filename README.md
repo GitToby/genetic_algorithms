@@ -17,7 +17,7 @@ This is a basic example for maximising values in a list, starring with 10 member
 Then it will log to the screen and create a csv file with each generations information in short format.
 
 ```python
-import src as ga
+import genetic_algorithms as ga
 import random
 
 class MyMember(ga.MemberBase):
@@ -51,7 +51,7 @@ pop.run(100, print_logging=True, csv_path="example1.csv")
 
 This next one is a little more complected; we want to identify a door of a particular size.
 ```python
-import src as ga
+import genetic_algorithms as ga
 import random
 import numpy as np
 
@@ -80,29 +80,18 @@ class Door(ga.MemberBase):
         return 'height: ' + str(self.height) + " | width: " + str(self.width)
 
 
-def fit_through_door(door: Door):
-    # We can assume this function is a black box.. we dont know that the height is 10 and the width is 10
+def fit_through_door(member: Door):
     door_height = 10
     door_width = 3
-    height_diff = abs(door_height - door.height)
-    width_diff = abs(door_width - door.width)
-    if height_diff > 0 and width_diff > 0:
-        return (1 / height_diff) + (1 / width_diff)
-    elif height_diff == 0:
-        return 1 / width_diff
-    elif width_diff == 0:
-        return 1 / height_diff
-    else:
-        return np.inf
-
+    height_diff = abs(door_height - member.height)
+    width_diff = abs(door_width - member.width)
+    return height_diff + width_diff
 
 def param_generator():
-    # This generator will return a randomly sized door each time it is called to create an intial population
     max_h = 10
     max_w = 20
     yield {'height': random.randrange(max_h),
            'width': random.randrange(max_w)}
-
 
 random.seed(1)
 pop = ga.Population(100, Door, fit_through_door, member_parameters_generator=param_generator)
