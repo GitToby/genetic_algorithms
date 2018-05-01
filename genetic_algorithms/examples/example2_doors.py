@@ -52,5 +52,5 @@ pop = ga.Population(100, Door, fit_through_door, member_parameters_generator=par
 
 # run 500 generations before checking we have some parameters changed
 pop.run(generations=500, print_logging=True,)
-print("Best door:", pop.get_top())
+print("Best door:", pop.get_top_member())
 # This will spit out a very close approximation of the true door size we selected

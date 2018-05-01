@@ -36,10 +36,14 @@ class Population(object):
                 self.population = [self.member_type(construction_parameters=next(member_parameters_generator()),
                                                     seed=member_seed) for _ in range(self.size)]
         else:
-            self.population = population
+            self.population = list(population)
+            self.member_type = type(population[0])
 
-    def get_top(self):
-        return self.population[0], self.fitness_function(self.population[0])
+    def get_top_member(self, include_fitness=False):
+        if include_fitness:
+            return self.population[0], self.fitness_function(self.population[0])
+        else:
+            return self.population[0]
 
     def _get_score_all_zip(self):
         fitness_scores = starmap(self.fitness_function, [[x] for x in self.population])
@@ -52,14 +56,15 @@ class Population(object):
         missing_pop = self.size - start_pop
         for _ in range(missing_pop):
             i, j = random.randrange(start_pop), random.randrange(start_pop)
+
+            # Note, if the implement crossover function inst implemented then this may return a NoneType
             new_member = self.population[i].crossover(self.population[j])
             new_member.mutate()
             # By appending we keep the _known_ best scores at the top.
             self.population.append(new_member)
 
-    def run(self, generations, successful_cutoff: float = 0.4,
-            print_logging: bool = False, csv_path: str = None,
-            maximise_fitness_func: bool = False) -> None:
+    def run(self, generations, maximise_fitness_func: bool, successful_cutoff: float = 0.4,
+            print_logging: bool = False, csv_path: str = None) -> None:
         # Indexing from 1
         for gen in range(generations):
             if print_logging:

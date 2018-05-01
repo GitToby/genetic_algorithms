@@ -40,7 +40,7 @@ class EndToEndTests(unittest.TestCase):
         end_scores = list(starmap(m_fit_func, [[m] for m in pop.population]))
         # Ensure changes have been made
         self.assertNotEqual(pop.population, start_pop)
-        self.assertGreaterEqual(max(end_scores), max(start_scores))
+        self.assertTrue(max(end_scores) >= max(start_scores))
 
     def test_parameter_passing_e2e(self):
         class MyMember(ga.MemberBase):
@@ -83,6 +83,3 @@ class EndToEndTests(unittest.TestCase):
         pop.run(generations=500, maximise_fitness_func=False)
         self.assertEqual({'height': 9.6953125, 'width': 4.1953125}, pop.population[0].construction_parameters)
 
-
-if __name__ == '__main__':
-    unittest.main()
