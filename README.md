@@ -13,7 +13,7 @@ Roadmap
 
 Examples
 --------
-This is a basic example for maximising values in a list, starring with 10 members running 100 generation.
+This is a basic example for maximising values in a list, starting with 10 members running 100 generation.
 Then it will log to the screen and create a csv file with each generations information in short format.
 
 ```python
