@@ -1,9 +1,11 @@
 [tool.poetry]
 name = "genetic_algorithms"
-version = "1.0.0"
+version = "1.0.1"
 description = "This library is a wrapper for genetic algorithms to leverage in optimisation problems."
 authors = ["Toby <toby@thedevlins.biz>"]
 license = "MIT"
+readme = 'README.md'
+repository = "https://github.com/GitToby/genetic_algorithms"
 
 [tool.poetry.dependencies]
 python = "^3.8"
