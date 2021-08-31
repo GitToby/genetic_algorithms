@@ -7,7 +7,7 @@ It hopes to make writing infinitely customizable genetic algorithms easy and qui
 # Installation
 This module can be installed via pip:
 ```bash
-pip install geneti
+pip install genetic-algorithms
 ```
 
 # Roadmap
