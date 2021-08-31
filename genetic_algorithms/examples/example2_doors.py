@@ -1,6 +1,7 @@
-import random
-import genetic_algorithms as ga
 import numpy as np
+import random
+
+import genetic_algorithms as ga
 
 
 # Example 2 - Finding a door that's the right size
@@ -51,6 +52,6 @@ random.seed(1)
 pop = ga.Population(100, Door, fit_through_door, member_parameters_generator=param_generator)
 
 # run 500 generations before checking we have some parameters changed
-pop.run(generations=500, print_logging=True,)
+pop.run(generations=500, print_logging=True, )
 print("Best door:", pop.get_top())
 # This will spit out a very close approximation of the true door size we selected

@@ -1,7 +1,7 @@
-from itertools import starmap
 import numpy as np
-from pandas import DataFrame
 import random
+from itertools import starmap
+from pandas import DataFrame
 
 
 class Population(object):

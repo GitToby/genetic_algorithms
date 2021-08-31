@@ -1,18 +1,21 @@
-Genetic Algorithms for python
-==============
+# Genetic Algorithms for python
 [![Build Status](https://travis-ci.org/GitToby/genetic_algorithms.svg?branch=master)](https://travis-ci.org/GitToby/genetic_algorithms)
 
-This library hopes to build a wrapper for genetic algorithms to leverage in optimisation situations.
+This library is a wrapper for genetic algorithms to leverage in optimisation problems.
 It hopes to make writing infinitely customizable genetic algorithms easy and quick while having all the standard features expected.
 
-Roadmap
--------
+# Installation
+This module can be installed via pip:
+```bash
+pip install geneti
+```
+
+# Roadmap
 * add mutation potency & frequency, extract population flow to user defined sequence.
 * add multi population models
 * add common crossover and mutation generic methods
 
-Examples
---------
+# Examples
 This is a basic example for maximising values in a list, starting with 10 members running 100 generation.
 Then it will log to the screen and create a csv file with each generations information in short format.
 
@@ -102,4 +105,4 @@ print("Best door:", pop.get_top())
 # Best door: (height: 9.999995902180672 | width: 3.999865485355258, 244033.23286180547)
 ```
 
-Finally we will boost it to a very complicated example, we want to generate a copy of a picture of a face from a randomly generated face.
+Finally, we will boost it to a very complicated example, we want to generate a copy of a picture of a face from a randomly generated face.

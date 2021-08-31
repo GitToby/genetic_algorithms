@@ -1,5 +1,6 @@
 import random
 import unittest
+
 import genetic_algorithms as ga
 
 

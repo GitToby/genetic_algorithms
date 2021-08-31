@@ -1,6 +1,6 @@
+import numpy as np
 import random
 import unittest
-import numpy as np
 from itertools import starmap
 
 import genetic_algorithms as ga

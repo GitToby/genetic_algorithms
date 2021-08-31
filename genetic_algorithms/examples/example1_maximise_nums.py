@@ -1,5 +1,6 @@
-import random
 import numpy as np
+import random
+
 import genetic_algorithms as ga
 
 

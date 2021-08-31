@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "genetic_algorithms"
+version = "1.0.0"
+description = "This library is a wrapper for genetic algorithms to leverage in optimisation problems."
+authors = ["Toby <toby@thedevlins.biz>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.3.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
